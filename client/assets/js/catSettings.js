@@ -22,12 +22,12 @@ $( document ).ready(function() {
   $('#dnaeyes').html(defaultDNA.eyesColor);
   $('#dnaears').html(defaultDNA.earsColor);
     
-//   $('#dnashape').html(defaultDNA.eyesShape)
-//   $('#dnadecoration').html(defaultDNA.decorationPattern)
-//   $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
-//   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
-//   $('#dnaanimation').html(defaultDNA.animation)
-//   $('#dnaspecial').html(defaultDNA.lastNum)
+  $('#dnashape').html(defaultDNA.eyesShape)
+  $('#dnadecoration').html(defaultDNA.decorationPattern)
+  $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
+  $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
+  $('#dnaanimation').html(defaultDNA.animation)
+  $('#dnaspecial').html(defaultDNA.lastNum)
 
   renderCat(defaultDNA)
 });
@@ -53,10 +53,17 @@ function renderCat(dna){
     mouthColor(colors[dna.mouthColor],dna.mouthColor)
     eyesColor(colors[dna.eyesColor],dna.eyesColor)
     earsColor(colors[dna.earsColor],dna.earsColor)
+    eyeVariation(dna.eyesShape)
+    decorationVariation(dna.decorationPattern)
+    decorationSidesColor(colors[dna.decorationSidescolor], dna.decorationSidescolor)
     $('#bodycolor').val(dna.headcolor)
     $('#mouthcolor').val(dna.mouthColor)
     $('#eyescolor').val(dna.eyesColor)
     $('#earscolor').val(dna.earsColor)
+    $('#eyeshape').val(dna.eyesShape)
+    $('#decoration').val(dna.decorationPattern)
+    $('#decorationMidColor').val(dna.decorationMidcolor)
+    $('#decorationSidesColor').val(dna.decorationSidescolor)
 }
 
 // Changing cat colors
@@ -82,4 +89,28 @@ $('#earscolor').change(()=>{
     var colorVal = $('#earscolor').val()
     console.log("colorVal", colorVal)
     earsColor(colors[colorVal],colorVal)
+})
+
+$('#eyeshape').change(()=>{
+    var code = $('#eyeshape').val()
+    console.log("code", code)
+    eyeVariation(parseInt(code))
+})
+
+$('#decoration').change(()=>{
+    var code = $('#decoration').val()
+    console.log("code", code)
+    decorationVariation(parseInt(code))
+})
+
+$('#decorationMidColor').change(()=>{
+    var colorVal = $('#decorationMidColor').val()
+    console.log("colorVal", colorVal)
+    decorationMidColor(colors[colorVal],colorVal)
+})
+
+$('#decorationSidesColor').change(()=>{
+    var colorVal = $('#decorationSidesColor').val()
+    console.log("colorVal", colorVal)
+    decorationSidesColor(colors[colorVal],colorVal)
 })

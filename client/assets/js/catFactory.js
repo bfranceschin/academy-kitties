@@ -44,38 +44,81 @@ function earsColor (color, code) {
     $('#dnaears').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
 
+function decorationMidColor(color, code) {
+    $('#decorationMidColorCode').html('code: '+code) //This updates text of the badge next to the slider
+    $('#dnadecorationMid').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__head-dots').css('background', '#' + color)  //This changes the color of the cat
+}
+
+function decorationSidesColor(color, code) {
+    $('#decorationSidesColorCode').html('code: '+code) //This updates text of the badge next to the slider
+    $('#dnadecorationSides').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__head-dots_first').css('background', '#' + color)  //This changes the color of the cat
+    $('.cat__head-dots_second').css('background', '#' + color)  //This changes the color of the cat
+}
+
 //###################################################
 //Functions below will be used later on in the project
 //###################################################
 function eyeVariation(num) {
 
     $('#dnashape').html(num)
+    $('#eyeShapeCode').html('code: '+num)
     switch (num) {
         case 1:
-            normalEyes()
-            $('#eyeName').html('Basic')
+            eyes1()
+            break
+        case 2:
+            eyes1()
+            eyes2()
+            break
+        case 3:
+            eyes1()
+            eyes3()
             break
     }
 }
 
 function decorationVariation(num) {
     $('#dnadecoration').html(num)
+    $('#decorationcode').html('code: '+num)
     switch (num) {
         case 1:
-            $('#decorationName').html('Basic')
-            normaldecoration()
+            decoration(0, 0, 0)
+            break
+        case 2:
+            decoration(0, 45, -45)
+            break
+        case 3:
+            decoration(45, 0, 0)
             break
     }
 }
 
-async function normalEyes() {
+async function eyes1 () {
     await $('.cat__eye').find('span').css('border', 'none')
 }
 
-async function normaldecoration() {
+async function eyes2 () {
+    await $('.cat__eye').find('span').css('border-top', '15px solid')
+}
+
+async function eyes3 () {
+    console.log("kdjaksdjakldjalkdjakk")
+    await $('.cat__eye').find('span').css('border-bottom', '15px solid')
+}
+
+async function decoration(mid, left, right) {
     //Remove all style from other decorations
     //In this way we can also use normalDecoration() to reset the decoration style
-    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
-    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
-    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+    let midRotation = "rotate("+mid+"deg)"
+    let leftRotation = "rotate("+left+"deg)"
+    let rightRotation = "rotate("+right+"deg)"
+    $('.cat__head-dots').css({ "transform": midRotation, "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.cat__head-dots_first').css({ "transform": leftRotation, "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    $('.cat__head-dots_second').css({ "transform": rightRotation, "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+
+    // $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    // $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    // $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
 }
