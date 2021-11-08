@@ -104,7 +104,6 @@ async function eyes2 () {
 }
 
 async function eyes3 () {
-    console.log("kdjaksdjakldjalkdjakk")
     await $('.cat__eye').find('span').css('border-bottom', '15px solid')
 }
 
@@ -121,4 +120,17 @@ async function decoration(mid, left, right) {
     // $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
     // $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
     // $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+}
+
+function animation (num) {
+    $('#dnaanimation').html(num)
+    $('#animationCode').html('code: '+num)
+    num = num - 1
+    let items = ["#head", "#tail"]
+    let animationClass = "moving"
+    console.log("item", items[num], animationClass)
+    items.forEach((i) => {$(i).removeClass(animationClass)})
+    if (num < items.length){
+        $(items[num]).addClass(animationClass)
+    }
 }
