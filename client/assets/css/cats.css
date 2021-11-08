@@ -12,6 +12,11 @@ body {
  
 }
 
+.cat__head_and_ears {
+    position: relative;
+    z-index: 26;
+}
+
 .cat__head {
     position: relative;
     width: 230px;

@@ -126,7 +126,7 @@ function animation (num) {
     $('#dnaanimation').html(num)
     $('#animationCode').html('code: '+num)
     num = num - 1
-    let items = ["#head", "#tail"]
+    let items = ["#headAndEars", "#tail"]
     let animationClass = "moving"
     console.log("item", items[num], animationClass)
     items.forEach((i) => {$(i).removeClass(animationClass)})
