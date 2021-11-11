@@ -57,7 +57,7 @@ function renderCat(dna){
     decorationVariation(dna.decorationPattern)
     decorationMidColor(colors[dna.decorationMidcolor],dna.decorationMidcolor)
     decorationSidesColor(colors[dna.decorationSidescolor], dna.decorationSidescolor)
-    animation(defaultDNA.animation)
+    animation(dna.animation)
     $('#bodycolor').val(dna.headcolor)
     $('#mouthcolor').val(dna.mouthColor)
     $('#eyescolor').val(dna.eyesColor)
