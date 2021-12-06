@@ -93,25 +93,13 @@ function randomCat () {
 }
 
 function createKitty () {
-
-    // instance.once('Birth', {
-    //     //filter: {myIndexedParam: [20,23], myOtherIndexedParam: '0x123456789...'}, // Using an array means OR: e.g. 20 or 23
-    //     fromBlock: 0
-    // }, function(error, event){ 
-    //     console.log("No create Kitty")
-    //     console.log(event); 
-    // });
-
     instance.methods.createKittyGen0(getDna()).send({}, function (error, txHash){
         if (error)
-            //alert(error)
             console.log(error)
         else {
-            //alert("transaction hash: " + txHash)
             console.log("transaction hash: " + txHash)
         }
     })
-    
 }
 
 // Changing cat colors
