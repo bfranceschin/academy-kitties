@@ -2,7 +2,7 @@ var web3 = new Web3(Web3.givenProvider);
 
 var instance;
 var user;
-var contractAddress = "0xCb5f37BfF4b177c310a7fE01376Bc6b540ADF025";
+var contractAddress = "0x0BE48330fE09E24b32B0babb4df9f1786BcB3bbC";
 var userTokens = [];
 
 $(document).ready(function(){
@@ -38,9 +38,7 @@ $(document).ready(function(){
 })
 
 function initCollection () {
-    console.log("AQUIIIII MUDOU", user, instance);
     if (user) {
-        console.log("TEM USER CAT");
         instance.methods.totalSupply().call().then(function(result) {
             //console.log(result, web3.utils.isBN(result), typeof result, parseInt(result));
             let totalSupply = parseInt(result)
@@ -62,8 +60,9 @@ function initCollection () {
                         $('#userCatList').empty()
                         $('#userCatList').append(`<div class="dropdown-menu">`)
                         userTokens.forEach( (token) => {
-                            token
-                            $('#userCatList').append(`<a class="dropdown-item">cat dna ${token.genes} </a>`)
+                            //token
+                            //$('#userCatList').append(`<a class="dropdown-item">cat dna ${token.genes} </a>`)
+                            appendCat(token.genes);
                         })
                         $('#userCatList').append(`</div>`)
                     }
