@@ -58,13 +58,10 @@ function initCollection () {
                     userTokens = kitties
                     if (document.getElementById('userCatList')) {
                         $('#userCatList').empty()
-                        $('#userCatList').append(`<div class="dropdown-menu">`)
                         userTokens.forEach( (token) => {
                             //token
-                            //$('#userCatList').append(`<a class="dropdown-item">cat dna ${token.genes} </a>`)
                             appendCat(token.genes);
                         })
-                        $('#userCatList').append(`</div>`)
                     }
                 })
             })

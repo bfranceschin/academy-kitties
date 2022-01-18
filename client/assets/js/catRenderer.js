@@ -127,7 +127,7 @@ function appendCat (catDna) {
    //console.log(catHtml);
    //let newCatHtml = `<div id="${catDna}"> ` + catHtml + "<div>"
 let catHtml = `
-<div class="col-lg-4 catBox m-2 light-b-shadow">
+<div class="col-lg-4 catBox light-b-shadow">
 <div class="cat">
     <div id="${catDna}headAndEars" class="cat__head_and_ears">
         <div class="cat__ear">
