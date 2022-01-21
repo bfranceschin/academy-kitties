@@ -48,7 +48,35 @@
       <h1 class="c-white">User collection</h1>
       <!-- <p class="c-white">Create your custom Kitty</p> -->
     </div>
-  
+  <div class="container">
+    <div class="row">
+      <div class="dropdown">
+        <button id="motherDropDownButton" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Select mother
+        </button>
+        <div id="motherBreedDropdown" class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button id="fatherDropDownButton" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          Select father
+        </button>
+        <div id="fatherBreedDropdown" class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </div> 
+      <button type="button" class="btn btn-success" onclick="breed()">
+        Breed
+      </button>
+    </div>
+    
+  </div>
+    
     <div id="userCatList" class="d-flex flex-row flex-wrap">
     </div>
   </div>
@@ -56,4 +84,5 @@
   <script src="assets/js/colors.js"></script>
   <script src="assets/js/catRenderer.js"></script>
   <script src="./index.js"></script>
+  <script src="assets/js/collection.js"></script>
 </html>
