@@ -123,7 +123,7 @@ function colorConfig (catDna) {
   $(`#${catDna}rightDot`).css('background', '#' + colors[getDecorationSidesColorCode(catDna)])
 }
 
-function appendCat (catDna) {
+function appendCat (catId, catDna) {
    //console.log(catHtml);
    //let newCatHtml = `<div id="${catDna}"> ` + catHtml + "<div>"
 let catHtml = `
@@ -174,6 +174,7 @@ let catHtml = `
 <br>
 <div class="dnaDiv" id="${catDna}catDNA">
     <b>
+      #${catId} 
       DNA:
         <span id="dnabody">${getHeadColorCode(catDna)}</span>
         <span id="dnamouth">${getMouthColorCode(catDna)}</span>
@@ -188,6 +189,7 @@ let catHtml = `
         <span id="dnaspecial">${1}</span>
     </b>
 </div>
+<br>
 </div>
 `;
   $('#userCatList').append(catHtml);

@@ -50,7 +50,6 @@ function selectMother (catId) {
 function breed () {
   let mother = $('#motherDropDownButton').prop("catId")
   let father = $('#fatherDropDownButton').prop("catId")
-  console.log("Breeeeeeed", selectedMother, selectedFather)
 
   console.log(instance.methods)
   
@@ -85,9 +84,13 @@ function initCollection () {
           userKitties = kitties
           if (document.getElementById('userCatList')) {
             $('#userCatList').empty()
-            userKitties.forEach( (kitty) => {
-              appendCat(kitty.genes)
-            })
+            // userKitties.forEach( (kitty) => {
+            //   appendCat(kitty.genes)
+            // })
+            
+            for (let i=0; i<userTokens.length; i++) {
+              appendCat(userTokens[i], userKitties[i].genes)
+            }
           }
           if (document.getElementById("motherBreedDropdown")) {
             $('#motherBreedDropdown').empty()
